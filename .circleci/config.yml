@@ -3,7 +3,7 @@ version: 2.1
 jobs:
   ejecutar-tests-postman:
     docker:
-      - image: postman/collection-runner:latest
+      - image: circle/node:17.14.0
     steps:
       - checkout
       - run:
