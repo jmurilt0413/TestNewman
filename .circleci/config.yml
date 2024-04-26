@@ -20,7 +20,7 @@ jobs:
           command: npx postman collection run Testing  --report --report-type html
 
 workflows:
-  ejecutar-tests-postman: # This is the name of the workflow, feel free to change it to better match your workflow.
+  ejecutar-tests-postman-test: # This is the name of the workflow, feel free to change it to better match your workflow.
     # Inside the workflow, you define the jobs you want to run.
     jobs:
-      - say-hello
+      - ejecutar-tests-postman
