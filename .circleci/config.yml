@@ -34,7 +34,9 @@ jobs:
             source ~/.bashrc
             git clone https://github.com/jmurilt0413/TestNewman
             cd TestNewman/test_postman
-            newman run Integration_Testing.postman_collection.json --reporters html --reporter-html-export report.html
+            newman run Integration_Testing.postman_collection.json --reporters html --reporter-html-export /tmp/artifacts/report.html
+      - store_artifacts:
+          path: /tmp/artifacts
 
 # Orquestar trabajos usando flujos de trabajo
 # Consulte: https://circleci.com/docs/workflows/ y https://circleci.com/docs/configuration-reference/#workflows
