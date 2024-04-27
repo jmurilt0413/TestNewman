@@ -28,6 +28,10 @@ jobs:
             export PATH=~/.npm-global/bin:$PATH
             source ~/.bashrc
             npm install -g newman
+            newman --version
+            export PATH_NEWMAN=~/.npm-global/bin/newman:PATH_NEWMAN
+            source ~/.bashrc
+            ls -l ~/.npm-global/bin/newman
       - run:
           name: Clonar repositorio
           command: git clone https://github.com/jmurilt0413/TestNewman
