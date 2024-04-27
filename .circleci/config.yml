@@ -24,7 +24,7 @@ jobs:
           command: cd TestNewman
       - run:
           name: Instalar dependencias de Postman
-          command: npm install -g newman
+          command: npm install -g npm@latest
       - run:
           name: Ejecutar tests de Postman
           command: newman run Integration\ Testing.postman_collection.json --reporters junit,json --reporter-junit-export report.xml --reporter-json-export report.json
