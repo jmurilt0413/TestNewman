@@ -17,14 +17,23 @@ jobs:
       # Checkout el código como primer paso.
       - checkout
       - run:
+          name: Instalar Node.js y npm
+          command: |
+            curl -fsSL https://deb.nodesource.com/setup_14.x | sudo -E bash -
+            sudo apt-get install -y nodejs
+            npm --version
+            node --version
+      - run:
+          name: Instalar Newman
+          command: npm install -g newman
+          environment:
+            PATH: $PATH:/home/circleci/.npm-global/bin
+      - run:
           name: Clonar repositorio
           command: git clone https://github.com/jmurilt0413/TestNewman
       - run:
           name: Navegar al directorio de tests
           command: cd TestNewman
-      - run:
-          name: Instalar dependencias de Postman
-          command: npm install -g npm@latest
       - run:
           name: Ejecutar tests de Postman
           command: newman run Integration\ Testing.postman_collection.json --reporters junit,json --reporter-junit-export report.xml --reporter-json-export report.json
