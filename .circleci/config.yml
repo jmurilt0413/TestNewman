@@ -23,11 +23,7 @@ jobs:
             sudo apt-get install -y nodejs
             npm --version
             node --version
-      - run:
-          name: Instalar Newman
-          command: npm install -g newman
-          environment:
-            PATH: $PATH:/home/circleci/.npm-global/bin
+            npm install -g newman
       - run:
           name: Clonar repositorio
           command: git clone https://github.com/jmurilt0413/TestNewman
