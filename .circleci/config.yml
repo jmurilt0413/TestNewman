@@ -28,6 +28,7 @@ jobs:
             export PATH=~/.npm-global/bin:$PATH
             source ~/.bashrc
             npm install -g newman
+            npm install -g newman-reporter-html
             newman --version
             export PATH_NEWMAN=~/.npm-global/bin/newman:PATH_NEWMAN
             source ~/.bashrc
